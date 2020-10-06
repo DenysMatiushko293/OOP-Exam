@@ -5,4 +5,9 @@ int main()
 	string TimeMes;
 	TimeMes.append(asctime(time));
 	cout << TimeMes;
+	
+	
+	time_t rawtime;
+	rawtime = std::time(NULL);
+	cout << endl<<ctime(&rawtime);
 }
