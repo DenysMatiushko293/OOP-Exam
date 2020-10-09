@@ -1,13 +1,19 @@
 int main()
 {
 	time_t seconds = time(NULL);
-	tm* time = localtime(&seconds);
+	tm* time = gmtime(&seconds);
 	string TimeMes;
 	TimeMes.append(asctime(time));
 	cout << TimeMes;
-	
-	
+	struct tm received;
+	int size = TimeMes.length();
+	char *timeRead = new char[size+1];
+	strcpy(timeRead,TimeMes.c_str());
+	cout << endl << timeRead;
+
+
+
 	time_t rawtime;
 	rawtime = std::time(NULL);
-	cout << endl<<ctime(&rawtime);
+	cout << endl << ctime(&rawtime);
 }
